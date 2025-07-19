@@ -10,6 +10,24 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Utility class for reading contact information from an Excel (.xlsx) file.
+ *
+ * This class uses Apache POI to parse the first sheet of the Excel file and extract
+ * contact data row-by-row, converting each into a {@link Contact} object.
+ *
+ * Expected column order in the Excel sheet:
+ * 0 - Contact ID (numeric)
+ * 1 - First Name
+ * 2 - Last Name
+ * 3 - Email
+ * 4 - Postal Zip
+ * 5 - Address
+ *
+ * Rows with missing or invalid primary information (ID, Name, Email) are skipped.
+ *
+ * The parsed contact list is returned for further processing by the matching logic.
+ */
 public class ContactReader {
 
     private static final Logger logger = LogManager.getLogger(ContactReader.class);
@@ -21,6 +39,18 @@ public class ContactReader {
     private static final int ZIP_COL = 4;
     private static final int ADDRESS_COL = 5;
 
+    /**
+     * Reads contact data from the specified Excel file (.xlsx format).
+     *
+     * This method opens the file at the given path, reads the first sheet, and
+     * iterates through each row (starting after the header) to extract relevant fields.
+     * It constructs a {@link Contact} object from each valid row and adds it to the returned list.
+     *
+     * Rows missing key fields (ID, Name, Email) are skipped and logged.
+     *
+     * @param filePath the path to the Excel file to read
+     * @return a list of valid {@link Contact} instances extracted from the file
+     */
     public static List<Contact> readContactsFromExcel(String filePath) {
         List<Contact> contacts = new ArrayList<>();
 
@@ -65,6 +95,15 @@ public class ContactReader {
         return contacts;
     }
 
+    /**
+     * Extracts a string value from a given Excel cell.
+     *
+     * Supports multiple cell types including STRING, NUMERIC, BOOLEAN, and FORMULA.
+     * Falls back to empty string on error or if the cell is null.
+     *
+     * @param cell the Excel cell to extract the value from
+     * @return the string representation of the cell value, or empty string if not readable
+     */
     private static String getCellValue(Cell cell) {
         if (cell == null) return "";
         try {
