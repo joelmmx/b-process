@@ -1,0 +1,21 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Build and dependency output
+/target/
+*.class
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Maven
+dependency-reduced-pom.xml
+release.properties
+
+# Environment
+*.env
+*.xlsx
