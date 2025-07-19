@@ -46,7 +46,7 @@ public class Main {
                     addressScore = stringSimilarity(c1.getAddress().toLowerCase(), c2.getAddress().toLowerCase(), ld);
                 }
 
-                double totalScore = (nameScore * 0.5) + (emailScore * 0.3) + (zipScore * 0.1) + (addressScore * 0.1);
+                double totalScore = (emailScore * 0.6) + (nameScore * 0.2) + (zipScore * 0.1) + (addressScore * 0.1);
 
                 if (totalScore >= 0.5) {
                     String precision = classifyPrecision(totalScore);
@@ -65,8 +65,8 @@ public class Main {
     }
 
     private static String classifyPrecision(double score) {
-        if (score >= 0.85) return "Alta";
-        if (score >= 0.70) return "Media";
-        return "Baja";
+        if (score >= 0.85) return MatchResult.PRECISION_HIGH;
+        if (score >= 0.70) return MatchResult.PRECISION_MEDIUM;
+        return MatchResult.PRECISION_LOW;
     }
 }
