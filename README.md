@@ -64,7 +64,7 @@ A final weighted score is calculated, and the match is classified as HIGH / MEDI
 │       └── MatchResult.java     # Match DTO
 │
 ├── test/java/com/example/
-│   └── MainTest.java            # Full suite of 50+ test cases
+│   └── MainTest.java            # Suite of 5+ test cases
 │
 ├── pom.xml                      # Maven dependencies
 └── Code Assessment - Find Duplicates Input.xlsx
