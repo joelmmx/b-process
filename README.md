@@ -1,16 +1,16 @@
-# 🧠 Duplicate Contact Detector
+# Duplicate Contact Detector
 
 A Java-based utility that reads an Excel spreadsheet of contacts and intelligently detects potential duplicate entries using a weighted similarity algorithm with **Levenshtein Distance**.
 
 ---
 
-## 📌 Purpose
+## Purpose
 
 This tool was designed to support contact data cleansing by detecting duplicate records based on a configurable similarity model. It's useful for CRMs, customer databases, mailing lists, and other systems that require contact deduplication.
 
 ---
 
-## 🔍 Features
+## Features
 
 - ✅ Reads `.xlsx` contact files
 - ✅ Detects duplicates using weighted scoring:
@@ -28,9 +28,9 @@ This tool was designed to support contact data cleansing by detecting duplicate 
 
 ---
 
-## ⚙️ How It Works
+## ⚙How It Works
 
-### 🔡 Levenshtein Distance
+### Levenshtein Distance
 
 The tool uses the [Levenshtein Distance](https://en.wikipedia.org/wiki/Levenshtein_distance) algorithm to measure similarity between names and addresses.
 
@@ -42,7 +42,7 @@ A final weighted score is calculated, and the match is classified as HIGH / MEDI
 
 ---
 
-## 📦 Technologies Used
+## Technologies Used
 
 - **Java 17+**
 - **Apache POI** for Excel parsing
@@ -51,8 +51,6 @@ A final weighted score is calculated, and the match is classified as HIGH / MEDI
 - **Log4j 2** for logging
 
 ---
-
-## 📁 Project Structure
 
 ## 📁 Project Structure
 
