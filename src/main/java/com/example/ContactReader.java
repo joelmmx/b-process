@@ -90,6 +90,7 @@ public class ContactReader {
 
         } catch (Exception e) {
             logger.error("Error reading Excel file: {}", filePath, e);
+            return null;
         }
 
         return contacts;

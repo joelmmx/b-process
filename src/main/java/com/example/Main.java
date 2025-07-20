@@ -35,8 +35,12 @@ public class Main {
     public static void main(String[] args) {
         String filePath = "Code Assessment - Find Duplicates Input.xlsx";
         List<Contact> contacts = ContactReader.readContactsFromExcel(filePath);
+        if (contacts == null) {
+            logger.error("No contacts found");
+            System.exit(-1);
+            return;
+        }
         List<MatchResult> results = findMatches(contacts);
-
         logger.info("ContactID Origen | ContactID Coincidencia | Precisión");
         for (MatchResult result : results) {
             String origin = String.format("%-17d", result.getOriginID());
