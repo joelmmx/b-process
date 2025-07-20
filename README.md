@@ -54,20 +54,23 @@ A final weighted score is calculated, and the match is classified as HIGH / MEDI
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
+
+```
 .
 ├── src
 │   └── main/java/com/example/
-│       ├── Main.java               # Core logic
-│       ├── Contact.java            # Contact model
-│       ├── ContactReader.java      # Excel reader
-│       └── MatchResult.java        # Match DTO
+│       ├── Main.java            # Core logic
+│       ├── Contact.java         # Contact model
+│       ├── ContactReader.java   # Excel reader
+│       └── MatchResult.java     # Match DTO
 │
 ├── test/java/com/example/
-│   └── MainTest.java               # Full suite of 50+ test cases
+│   └── MainTest.java            # Full suite of 50+ test cases
 │
-├── pom.xml                         # Maven dependencies
+├── pom.xml                      # Maven dependencies
 └── Code Assessment - Find Duplicates Input.xlsx
-
+```
 ---
 
 ## Getting Started
